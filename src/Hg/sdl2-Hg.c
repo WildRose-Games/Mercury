@@ -2,6 +2,9 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: this is the engine translation unit. Only this file depends on
+ *  SDL2.
  */
 
 #include "Hg.h"

@@ -2,13 +2,16 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: You define the static memory that persists between frames here
  */
 
-#ifndef GAEM_H
-#define GAEM_H
+#ifndef HG_GAEM_H
+#define HG_GAEM_H
 
 struct HgGameState {
-  
+ 
+  /* Add whatever thing you need here */
   HgCamera *camera;
 
   HgLight *light;
@@ -22,4 +25,4 @@ struct HgGameState {
 
 };
 
-#endif
+#endif /*HG_GAME_H*/

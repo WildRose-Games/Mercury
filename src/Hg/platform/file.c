@@ -2,6 +2,8 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Handles file io
  */
 
 #include <stdio.h>

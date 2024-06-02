@@ -2,6 +2,8 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Handles actually rendering meshes or other objects to screen.
  */
 
 void hgBeginDraw(void){

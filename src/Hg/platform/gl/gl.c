@@ -2,6 +2,9 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Include this file to support GLES2.0. Defines some platform
+ *  specific structs
  */
 
 #define STB_IMAGE_IMPLEMENTATION

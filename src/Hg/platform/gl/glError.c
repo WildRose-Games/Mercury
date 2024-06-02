@@ -2,6 +2,8 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Handle error checking of opengl calls.
  */
 
 void clearErrorGL(void){

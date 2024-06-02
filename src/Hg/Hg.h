@@ -2,6 +2,10 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Hg.h is the documentation for using the mercury engine.
+ *  It's also the header file for connecting the game translation unit, and
+ *  the engine translation unit.
  */
 
 #ifndef HG_H
@@ -111,7 +115,6 @@ typedef struct HgInput{
 /**********
  * Memory *
  **********/
-typedef struct HgGameState HgGameState;
 
 #include "HgL_Arena.h"
 
@@ -171,7 +174,7 @@ void hgBindMeshShader(void);
 void hgUnbindShader(void);
 
 void hgCleanupShader(HgArena *hgArena, HgShader *s);
-#include "uniform.c"
+#include "uniform.h"
 
 /****************
  * VertexBuffer *

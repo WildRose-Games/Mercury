@@ -2,6 +2,8 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Handles model vertex data (vertex buffers in OpenGL)
  */
 
 void setupAttrib(uint32_t index, int size, int position){

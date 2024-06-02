@@ -2,6 +2,8 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Handles opengl shaders
  */
 
 #include <alloca.h>

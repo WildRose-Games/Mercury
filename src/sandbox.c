@@ -2,10 +2,15 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *  
+ *  Purpose: Example game. For Mercury, a game is a single translation unit
+ *  build that impliments the functions of Hg/game.h
  */
 
+/* You must include Hg.h first */
 #include "Hg/Hg.h"
 
+/* You define the gamestate */
 #include "gameState.h"
 
 #include <stdlib.h>
@@ -22,6 +27,7 @@ HgVersionInfo hgGetVersionInfo(void){
 
 void hgStartGame(HgArena *arena, HgGameState *gs){
 
+  /* Allocating memory */
   gs->hgSymbol = hgArenaPush(arena, sizeof(HgEntity));
   gs->hgPlanet = hgArenaPush(arena, sizeof(HgEntity));
   gs->camera = hgArenaPush(arena, sizeof(HgCamera));
@@ -49,10 +55,8 @@ void hgStartGame(HgArena *arena, HgGameState *gs){
   vec3 cameraPos = {0.0, 0.0, -2.0};
   glm_translate_make(gs->camera->view, cameraPos);
 
-  //gs->mesh = loadMesh(arena, "Suzanne");
   gs->hgSymbolMesh =  hgLoadMesh(arena, "HgSymbol");
   gs->hgPlanetMesh =  hgLoadMesh(arena, "HgPlanet");
-  //hgLoadMesh(arena, "HgSymbol");
   
   hgInitEntity(gs->hgSymbol, gs->hgSymbolMesh);
   hgInitEntity(gs->hgPlanet, gs->hgPlanetMesh);
@@ -72,7 +76,6 @@ void hgGameLoop(HgArena *arena,
   glm_rotate_y(gs->hgSymbol->trans, 1.0 * delta, gs->hgSymbol->trans);
   glm_rotate_y(gs->hgPlanet->trans, -1.0 * delta, gs->hgPlanet->trans);
 
-
   hgBeginDraw();   
   hgBindMeshShader();
   hgDrawMesh(gs->hgSymbol, gs->light, gs->camera);
@@ -82,4 +85,10 @@ void hgGameLoop(HgArena *arena,
 void hgEndGame(HgArena *arena, HgGameState *gs){
   hgCleanupMesh(arena, gs->hgPlanetMesh);
   hgCleanupMesh(arena, gs->hgSymbolMesh);
+  
+  hgArenaPop(arena, gs->light, sizeof(HgLight));
+  hgArenaPop(arena, gs->rot, sizeof(float));
+  hgArenaPop(arena, gs->camera, sizeof(HgCamera));
+  hgArenaPop(arena, gs->hgPlanet, sizeof(HgEntity)); 
+  hgArenaPop(arena, gs->hgSymbol, sizeof(HgEntity));
 }

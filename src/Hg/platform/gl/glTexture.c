@@ -2,6 +2,8 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: handles opengl textures
  */
 
 void hgBindTexture(HgTexture *t, uint32_t slot){

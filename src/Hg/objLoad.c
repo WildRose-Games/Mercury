@@ -2,6 +2,9 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: Uses the platform/file to load obj wavefront files, and thier 
+ *  associated mtl file, to generate a mesh.
  */
 
 typedef struct HgObjFileCounts {

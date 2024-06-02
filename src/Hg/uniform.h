@@ -2,7 +2,21 @@
  *  Author: Gwenivere Benzschawel
  *  Copyright: 2024
  *  License: MIT
+ *
+ *  Purpose: defines the various uniform functions, so Hg.h isn't spammed with 
+ *  these forward declarations.
+ *
+ *  Basic format:
+ *
+ *  hgUniformX(...); sets up float uniform of type X, on shader s 
+ *  hgUniformIX(...); sets up integer uniform of type X, on shader s 
+ *
+ *  hgUniformXv(...); sets up float array uniform of type X, on shader s 
+ *  hgUniformIXv(...); sets up integer array uniform of type X, on shader s 
  */
+
+#ifndef HG_UNIFORM_H
+#define HG_UNIFORM_H
 
 void hgUniformFloat(HgShader *s,
                   const char *name,
@@ -108,3 +122,4 @@ void hgUniformMat4v(HgShader *s,
                  uint32_t count,
                  bool isTrans,
                  mat4 *data);
+#endif /* HG_UNIFORM_H */
