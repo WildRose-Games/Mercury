@@ -258,9 +258,21 @@ bool hgCheckGameHotLoad(HgGameCode *gameCode){
 
 HgGameCode gameCode = {0};
 
+HgVersionInfo vi;
+
 int main(void)
 {
+#ifdef HG_BUILD_DEBUG
+  double delayReload = 0.0;
+  hgLoadGameCode(&gameCode);
+  vi = gameCode.hgGetVersionInfo();
+  
+  HG_LOG("MERCURY ENGINE ~ v%d.%d.%d", HG_MAJOR, HG_MINOR, HG_PATCH);
+  HG_LOG("%s ~ v%d.%d.%d",vi.gameName, vi.major, vi.minor, vi.patch );
 
+#else
+  vi = hgGetVersionInfo();
+#endif
   SDL_Window* window = NULL;
   SDL_GLContext context = NULL;
 
@@ -275,7 +287,7 @@ int main(void)
   SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1);
   SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 24);
 
-  window = SDL_CreateWindow(WINDOW_NAME,
+  window = SDL_CreateWindow(vi.gameName,
                             SDL_WINDOWPOS_UNDEFINED,
                             SDL_WINDOWPOS_UNDEFINED,
                             INIT_WIDTH,
@@ -314,13 +326,7 @@ int main(void)
   gs = gameState; 
   
 #ifdef HG_BUILD_DEBUG
-  double delayReload = 0.0;
-  hgLoadGameCode(&gameCode);
-  HgVersionInfo vi = gameCode.hgGetVersionInfo();
   gameCode.hgStartGame(arena, gs);
-  
-  HG_LOG("MERCURY ENGINE ~ v%d.%d.%d", HG_MAJOR, HG_MINOR, HG_PATCH);
-  HG_LOG("%s ~ v%d.%d.%d",vi.gameName, vi.major, vi.minor, vi.patch );
 #else
   hgStartGame(arena, gs);
 #endif //HG_BUILD_DEBUG

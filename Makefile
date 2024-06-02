@@ -22,7 +22,7 @@ gameDebug:
 release: 
 	$(CC) $(FLAGS) $(PLAT) src/$(NAME).c src/$(HG)/sdl2-$(HG).c -O2 -o bin/$(NAME)
 
-all: linuxDebug, linux
+all: debug, release
 
 run: 
 	( cd bin; ./$(NAME)_dbg )

@@ -37,7 +37,6 @@
 #define INIT_WIDTH 640
 #define INIT_HEIGHT 480
 #define INIT_ASPECT_RATIO (float)INIT_WIDTH / (float)INIT_HEIGHT
-#define WINDOW_NAME "Gaem"
 
 //Log
 #define LOG_LENGTH 1028
