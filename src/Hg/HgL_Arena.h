@@ -274,6 +274,7 @@ int hgl_arena_popFunc(HgArena *arena,
   }
 #else
 
+  (void)(returnMemory);
   /* calc alignment */
   uint64_t returnPadded = returnSize;
   if(returnPadded % arena->dataMultiple != 0){
