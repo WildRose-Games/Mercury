@@ -218,7 +218,6 @@ HgMesh* hgLoadObjMesh(HgArena *arena,
   hgCreateMeshVertexBuffer(mesh,
                            verts,
                            counts.verts,
-                           sizeof(HgVertex),
                            inds,
                            counts.inds
                            ); 

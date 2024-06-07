@@ -42,7 +42,6 @@ void hgUnbindVertexBuffer(void){
 void hgCreateMeshVertexBuffer(HgMesh *mesh,
                               HgVertex* data,
                               uint32_t vertCount,
-                              uint32_t vertexSize,
                               uint16_t* inds,
                               uint32_t indCount){
   
@@ -62,7 +61,7 @@ void hgCreateMeshVertexBuffer(HgMesh *mesh,
                        GL_STATIC_DRAW));
 
   GL_CALL(glBufferData(GL_ARRAY_BUFFER,
-                       vertCount * vertexSize,
+                       vertCount * sizeof(HgVertex),
                        data, GL_STATIC_DRAW));
 
   hgUnbindVertexBuffer();
