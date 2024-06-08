@@ -6,7 +6,7 @@
 #include <SDL2/SDL.h>
 
 #include "gl/gl.c"
-#include "../objLoad.c"
+#include "objLoad.c"
 
 //POSIX
 #include <dlfcn.h>
@@ -246,5 +246,4 @@ void hgCleanupEngine(void){
   }
   SDL_DestroyWindow(window);
   SDL_Quit();
-
 }
