@@ -14,13 +14,15 @@ NAME := sandbox
 DBG := -DHG_BUILD_DEBUG -O0 -g 
 
 debug: gameDebug
-	$(CC) $(FLAGS) $(PLAT) src/$(HG)/sdl2-$(HG).c $(DBG) -o bin/$(NAME)_dbg $(EXPORT)
+	$(CC) $(FLAGS) $(PLAT) src/$(HG)/platform/sdl2-$(HG).c $(DBG) \
+		-o bin/$(NAME)_dbg $(EXPORT)
 
 gameDebug:
 		$(CC) $(FLAGS) src/$(NAME).c $(DBG) -o bin/libGameDbg.so $(SO) 
 
 release: 
-	$(CC) $(FLAGS) $(PLAT) src/$(NAME).c src/$(HG)/sdl2-$(HG).c -O2 -o bin/$(NAME)
+	$(CC) $(FLAGS) $(PLAT) src/$(NAME).c src/$(HG)/platform/sdl2-$(HG).c -O2 \
+		-o bin/$(NAME)
 
 all: debug, release
 

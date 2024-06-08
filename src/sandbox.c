@@ -46,10 +46,10 @@ void hgStartGame(HgArena *arena, HgGameState *gs){
   gs->light->color[1] = 1.0;
   gs->light->color[2] = 1.0;
 
-  glm_perspective(CAMERA_FOV,
-                  INIT_ASPECT_RATIO,
-                  CAMERA_NEAR,
-                  CAMERA_FAR,
+  glm_perspective((90 * M_PI / 180.0),
+                  (float)INIT_WIDTH / (float)INIT_HEIGHT,
+                  0.1,
+                  100,
                   gs->camera->proj);
   
   vec3 cameraPos = {0.0, 0.0, -2.0};
@@ -78,8 +78,8 @@ void hgGameLoop(HgArena *arena,
 
   hgBeginDraw();   
   hgBindMeshShader();
-  hgDrawMesh(gs->hgSymbol, gs->light, gs->camera);
-  hgDrawMesh(gs->hgPlanet, gs->light, gs->camera);
+  hgDrawEntity(gs->hgSymbol, gs->light, gs->camera);
+  hgDrawEntity(gs->hgPlanet, gs->light, gs->camera);
 }
 
 void hgEndGame(HgArena *arena, HgGameState *gs){
