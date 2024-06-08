@@ -50,8 +50,26 @@ void hgUpdateEngine(void);
 void hgCleanupEngine(void);
 
 /******************************
- * Platform Indipendent Code: *
+ * Platform Independent Code: *
  ******************************/
+
+/* Mercury Engine Version (01.02) */
+#define HG_MAJOR 0
+#define HG_MINOR 2
+#define HG_PATCH 0
+
+/* Shared Object (DLL) Filename Defs (01.03) */
+#ifdef HG_BUILD_DEBUG
+#define SO_FILE "./libGameDbg.so"
+#define SO_FILE_TEMP "./libGameDbg_temp.so"
+#define SO_FILENAME "libGameDbg.so"
+#define SO_FILENAME_TEMP "libGameDbg_temp.so"
+#else
+#define SO_FILE "./libGame.so"
+#define SO_FILE_TEMP "./libGame_temp.so"
+#define SO_FILENAME "libGame.so"
+#define SO_FILENAME_TEMP "libGame_temp.so"
+#endif /* HG_BUILD_DEBUG */
 
 #include "entity.c"
 #include "camera.c"

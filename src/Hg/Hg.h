@@ -13,11 +13,9 @@
  *  
  *  Usefull Macro Defines and Includes -------- (01.00)
  *    Standard Library Includes ----------- (01.01)
- *    Mercury Engine Version -------------- (01.02)
- *    Shared Object (DLL) Filename Defs --- (01.03)    
- *    Window Initial Size ----------------- (01.04)
- *    Max Log or Filepath Length ---------- (01.05)
- *    Math Functions (cglm) --------------- (01.06)
+ *    Window Initial Size ----------------- (01.02)
+ *    Max Log or Filepath Length ---------- (01.03)
+ *    Math Functions (cglm) --------------- (01.04)
  *
  *  Mercury Engine ------------ (02.00)
  *    Input --------------- (02.01)
@@ -59,36 +57,14 @@
 #include <math.h>
 #include <time.h>
 
-/**********************************
- * Mercury Engine Version (01.02) *
- **********************************/
-#define HG_MAJOR 0
-#define HG_MINOR 2
-#define HG_PATCH 0
-
-/*********************************************
- * Shared Object (DLL) Filename Defs (01.03) *
- *********************************************/
-#ifdef HG_BUILD_DEBUG
-#define SO_FILE "./libGameDbg.so"
-#define SO_FILE_TEMP "./libGameDbg_temp.so"
-#define SO_FILENAME "libGameDbg.so"
-#define SO_FILENAME_TEMP "libGameDbg_temp.so"
-#else
-#define SO_FILE "./libGame.so"
-#define SO_FILE_TEMP "./libGame_temp.so"
-#define SO_FILENAME "libGame.so"
-#define SO_FILENAME_TEMP "libGame_temp.so"
-#endif /* HG_BUILD_DEBUG */
-
 /*******************************
- * Window Initial Size (01.04) *
+ * Window Initial Size (01.02) *
  *******************************/
 #define INIT_WIDTH 640
 #define INIT_HEIGHT 480
 
 /**************************************
- * Max Log or Filepath Length (01.05) *
+ * Max Log or Filepath Length (01.03) *
  **************************************/
 #include "HgL_Log.h"
 #define LOG_LENGTH 1028
@@ -101,7 +77,7 @@
 #define ALLOC_MEM_SIZE GIGABYTES(1)
 
 /*********************************
- * Math Functions (cglm) (01.06) *
+ * Math Functions (cglm) (01.04) *
  *********************************/
 #include <cglm/cglm.h>
 
