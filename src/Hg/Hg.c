@@ -56,7 +56,7 @@ void hgCleanupEngine(void);
 /* Mercury Engine Version (01.02) */
 #define HG_MAJOR 0
 #define HG_MINOR 2
-#define HG_PATCH 0
+#define HG_PATCH 4
 
 /* Shared Object (DLL) Filename Defs (01.03) */
 #ifdef HG_BUILD_DEBUG
